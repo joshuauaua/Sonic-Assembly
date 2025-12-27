@@ -31,7 +31,7 @@ const Home = () => {
                 textAlign: 'center',
                 maxWidth: '80%'
             }}>
-                Creative sound studio based in Stockholm
+                A CREATIVE SOUND STUDIO
             </h1>
         </div>
     );
