@@ -30,7 +30,7 @@ export default function Hero() {
             </h1>
             
             <p className="hero-subtext">
-                Tailored sounds and tech for brands, films, and experiences
+                Tailored sounds and custom tech for brands, films, and experiences
             </p>
 
             <Link to="/about" className="hero-cta">

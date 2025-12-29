@@ -78,9 +78,19 @@
   /* Gray-700 placeholder */
   background-position: center;
   background-size: cover;
-  margin-bottom: 1rem;
+  background-size: cover;
+  margin-bottom: 0.5rem;
   position: relative;
   transition: transform 0.3s ease;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Content Below Image */

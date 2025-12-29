@@ -1,44 +1,18 @@
 import React, { useState } from 'react';
 import './project-gallery.css';
+import projectsData from '../../../data/projects.json';
+import googleproj1 from '../../../assets/googleproj1.png';
 
-const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive dashboard for online retailers with real-time analytics and inventory management.",
-    color: "#3B82F6" // blue-500
-  },
-  {
-    id: 2,
-    title: "Social Media App",
-    description: "Connect with friends and share moments in this responsive mobile-first web application.",
-    color: "#10B981" // emerald-500
-  },
-  {
-    id: 3,
-    title: "Task Management Tool",
-    description: "Boost productivity with this drag-and-drop task organizer featuring team collaboration tools.",
-    color: "#8B5CF6" // violet-500
-  },
-  {
-    id: 4,
-    title: "Fitness Tracker",
-    description: "Monitor your workouts and health metrics with beautiful visualizations and progress tracking.",
-    color: "#F43F5E" // rose-500
-  },
-  {
-    id: 5,
-    title: "Recipe Finder",
-    description: "Discover thousands of recipes based on ingredients you have in your kitchen right now.",
-    color: "#F59E0B" // amber-500
-  },
-  {
-    id: 6,
-    title: "Travel Planner",
-    description: "Plan your next adventure with interactive maps, itinerary building, and local recommendations.",
-    color: "#06B6D4" // cyan-500
-  }
-];
+// Map image IDs from JSON to actual imported assets
+const imageMap = {
+  'googleproj1': googleproj1
+};
+
+// Enhance projects with actual image assets
+const projects = projectsData.map(project => ({
+  ...project,
+  image: project.imageId ? imageMap[project.imageId] : null
+}));
 
 export default function ProjectGallery() {
   const [startIndex, setStartIndex] = useState(0);
@@ -99,7 +73,7 @@ export default function ProjectGallery() {
               {projects.map((project) => (
                 <div key={project.id} className="project-card">
                   <div className="card-image" style={{backgroundColor: project.color}}>
-                    {/* Placeholder for real image */}
+                    {project.image && <img src={project.image} alt={project.title} />}
                   </div>
                   <div className="card-content">
                     <h3>{project.title}</h3>
