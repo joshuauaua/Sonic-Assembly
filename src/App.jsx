@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
+import ProjectTemplate from './pages/ProjectTemplate';
 import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/work/:slug" element={<ProjectTemplate />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </Layout>

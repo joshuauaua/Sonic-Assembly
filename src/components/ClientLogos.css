@@ -1,65 +1,76 @@
 /* src/components/ClientLogos.css */
-.client-logos-section {
-  padding: 6rem 2rem;
-  background-color: #000000;
-}
 
 .client-logos-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
+  padding: 6rem 2rem;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
 }
 
-.client-logos-title {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 4rem;
-}
-
-.client-logos-grid {
+.logos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns as requested */
+  gap: 4rem;
+  /* Generous spacing */
   align-items: center;
   justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Tablet */
-@media (min-width: 640px) {
-  .client-logos-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .client-logos-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6rem;
-  }
-}
-
-.client-logo {
-  color: rgba(255, 255, 255, 0.3);
-  transition: all 0.4s ease;
-  cursor: pointer;
+.logo-item {
   width: 100%;
-  max-width: 140px;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.client-logo:hover {
-  color: rgba(255, 255, 255, 0.9);
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+.logo-item:hover {
+  opacity: 1;
 }
 
-.client-logo svg {
-  width: 100%;
-  height: 100%;
-  max-height: 40px;
+.logo-item img {
+  max-width: 160px;
+  /* Control max size */
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* Invert filter for light mode if the images are white-only files */
+  /* Assuming files are "logo_white_...", they are likely white. 
+       In light mode, we need them to be dark. */
+}
+
+/* Light mode support for white logos */
+[data-theme='light'] .logo-item img {
+  filter: invert(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .logo-item img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Keep 2 cols on mobile for logos usually looks ok, or 1 if preferred */
+  }
 }
