@@ -1,11 +1,11 @@
 /* src/components/Footer.css */
 .footer {
-  background-color: #0e0e0e;
+  background-color: var(--bg-primary);
   /* Match body bg */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   padding: 4rem 2rem 2rem;
   margin-top: auto;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .footer-logo {
-  color: white;
+  color: var(--text-primary);
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -41,7 +41,7 @@
 
 .footer-tagline {
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 .footer-links {
@@ -57,7 +57,7 @@
 }
 
 .footer-column h4 {
-  color: white;
+  color: var(--text-primary);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -69,21 +69,21 @@
 }
 
 .footer-column a:hover {
-  color: white;
+  color: var(--text-primary);
 }
 
 .footer-bottom {
   max-width: 1200px;
   margin: 4rem auto 0;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
 }
 
 @media (min-width: 768px) {
@@ -98,5 +98,5 @@
 }
 
 .footer-legal a:hover {
-  color: white;
+  color: var(--text-primary);
 }

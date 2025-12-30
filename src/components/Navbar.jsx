@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     return (
@@ -12,8 +13,10 @@ const Navbar = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             zIndex: 100,
-            mixBlendMode: 'difference', // Makes text visible on light/dark backgrounds
-            color: 'white'
+            backgroundColor: 'var(--bg-primary)',
+            color: 'var(--text-primary)',
+            transition: 'background-color 0.3s ease, color 0.3s ease',
+            borderBottom: '1px solid var(--border-color)'
         }}>
             <Link to="/" style={{ 
                 fontSize: '1.2rem', 
@@ -24,9 +27,10 @@ const Navbar = () => {
                 Sonic Assembly
             </Link>
             
-            <div style={{ display: 'flex', gap: '2rem' }}>
+            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                 <Link to="/work" style={{ textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '0.05em' }}>Work</Link>
                 <Link to="/about" style={{ textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '0.05em' }}>About</Link>
+                <ThemeToggle />
             </div>
         </nav>
     );

@@ -2,9 +2,9 @@
 .project-gallery-container {
   width: 100%;
   padding: 4rem 1rem;
-  background-color: #000000;
+  background-color: var(--bg-primary);
   /* Black background */
-  color: #ffffff;
+  color: var(--text-primary);
   overflow: hidden;
   position: relative;
 }
@@ -23,12 +23,12 @@
 .gallery-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .gallery-header p {
-  color: #9ca3af;
+  color: var(--text-muted);
   /* Gray-400 */
   font-size: 1.1rem;
 }
@@ -74,7 +74,7 @@
   width: 100%;
   padding-bottom: 100%;
   /* Makes it a square (aspect-ratio: 1/1) */
-  background-color: #374151;
+  background-color: var(--surface-bg);
   /* Gray-700 placeholder */
   background-position: center;
   background-size: cover;
@@ -101,13 +101,13 @@
 .card-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
   margin-top: 0;
 }
 
 .card-content p {
-  color: #9ca3af;
+  color: var(--text-muted);
   /* Gray-400 */
   font-size: 0.95rem;
   line-height: 1.5;
@@ -124,7 +124,7 @@
 }
 
 .nav-button {
-  background-color: #1f2937;
+  background-color: var(--surface-bg);
   /* Gray-800 */
   border: none;
   border-radius: 0;
@@ -136,11 +136,11 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .nav-button:hover {
-  background-color: #374151;
+  background-color: var(--surface-bg-hover);
   /* Gray-700 */
 }
 
