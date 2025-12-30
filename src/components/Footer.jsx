@@ -19,12 +19,13 @@ const Footer = () => {
                         <h4>Explore</h4>
                         <Link to="/work">Work</Link>
                         <Link to="/about">About</Link>
-                        <Link to="/process">Process</Link>
+                        <Link to="https://sonicassembly.substack.com/" target="_blank">Blog</Link>
+                        <Link to="/privacy">Privacy Policy</Link>
                     </div>
 
                     <div className="footer-column">
                         <h4>Connect</h4>
-                        <a href="mailto:hello@sonicassembly.com">hello@sonicassembly.com</a>
+                        <a href="mailto:hej@sonicassembly.com">hej@sonicassembly.com</a>
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
                     </div>
@@ -35,7 +36,6 @@ const Footer = () => {
                 <p>&copy; {currentYear} Sonic Assembly. All rights reserved.</p>
                 <div className="footer-legal">
                     <Link to="/privacy">Privacy Policy</Link>
-                    <Link to="/terms">Terms</Link>
                 </div>
             </div>
         </footer>
