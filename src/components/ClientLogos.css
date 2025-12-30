@@ -33,9 +33,9 @@
 }
 
 .logo-item img {
-  max-width: 160px;
+  max-width: 184px;
   /* Control max size */
-  max-height: 80px;
+  max-height: 92px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -64,7 +64,7 @@
   }
 
   .logo-item img {
-    max-width: 120px;
+    max-width: 138px;
   }
 }
 

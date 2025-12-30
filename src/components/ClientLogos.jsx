@@ -13,13 +13,13 @@ import logoPolar from '../assets/logo_white_polar.png';
 const ClientLogos = () => {
     // Array of logo objects for easy mapping
     const logos = [
-        { src: logoEu, alt: "European Union" },
         { src: logoFujifilm, alt: "Fujifilm" },
         { src: logoGoethe, alt: "Goethe Institut" },
         { src: logoGoogle, alt: "Google" },
-        { src: logoMbb, alt: "Medienboard Berlin-Brandenburg" },
+        { src: logoMbb, alt: "MoveByBike" },
         { src: logoMittuniversitet, alt: "Mittuniversitetet" },
-        { src: logoPolar, alt: "Polar Music Prize" }
+        { src: logoEu, alt: "European Commission" },
+        { src: logoPolar, alt: "Polar Skate Co" }
     ];
 
     return (
