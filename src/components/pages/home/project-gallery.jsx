@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './project-gallery.css';
 import projectsData from '../../../data/projects.json';
 import shankarselect from '../../../assets/shankarselect.png';
@@ -80,13 +81,15 @@ export default function ProjectGallery() {
             >
               {projects.map((project) => (
                 <div key={project.id} className="project-card">
-                  <div className="card-image" style={{backgroundColor: project.color}}>
-                    {project.image && <img src={project.image} alt={project.title} />}
-                  </div>
-                  <div className="card-content">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </div>
+                  <Link to={`/work/${project.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                    <div className="card-image" style={{backgroundColor: project.color}}>
+                      {project.image && <img src={project.image} alt={project.title} />}
+                    </div>
+                    <div className="card-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>

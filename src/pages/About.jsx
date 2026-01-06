@@ -2,6 +2,7 @@ import PhotoGrid from '../components/pages/home/PhotoGrid';
 
 const About = () => {
     return (
+        
         <div style={{ 
             minHeight: '100vh', 
             padding: '8rem 2rem 4rem',
@@ -22,7 +23,7 @@ const About = () => {
                     lineHeight: '1.6', 
                     marginBottom: '2rem' 
                 }}>
-                    At our core, we are identity shapers. Sonic Assembly was established with the belief that sound plays an essential role in evoking emotion and communicating information—the "special sauce" that transforms the mundane into the magical.
+                 Sonic Assembly was established with the belief that sound plays an essential role in evoking emotion and communicating information—the "special sauce" that transforms the mundane into the magical.
                 </p>
 
                 <p style={{ 
@@ -39,7 +40,7 @@ const About = () => {
                     lineHeight: '1.6', 
                     color: 'var(--text-secondary)'
                 }}>
-                    Today, we offer a comprehensive suite of services that spans linear media and interactive tech. From the final mix of a commercial to the Python code powering an audio-reactive installation, we approach every project with passion and fond curiosity.
+                    Today, we offer a comprehensive suite of services that spans linear media and interactive tech. From original music, sound design and final mix of a commercial to building immersive installations, interactive digital products and beyond, we approach every project with passion and fond curiosity.
                 </p>
             </div>
 

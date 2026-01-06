@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './mission-statement.css';
 
 const MissionStatement = () => {
+    const textRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+
+        if (textRef.current) {
+            observer.observe(textRef.current);
+        }
+
+        return () => {
+            if (textRef.current) {
+                observer.unobserve(textRef.current);
+            }
+        };
+    }, []);
+
     return (
         <section className="mission-section" aria-label="Mission Statement">
             <div className="mission-container">
-                <h2 className="mission-text">
-                    We engineer digital experiences that <span className="mission-accent">resonate</span> with purpose and precision.
+                <h2 className="mission-text" ref={textRef}>
+                    Crafting sonic worlds that <span className="mission-accent">resonate</span> with creative purpose and technical depth.
                 </h2>
             </div>
         </section>

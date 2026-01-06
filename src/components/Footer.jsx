@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-brand">
                     <h3 className="footer-logo">Sonic Assembly</h3>
-                    <p className="footer-tagline">Building digital experiences that resonate.</p>
+                    <p className="footer-tagline">Crafting Sonic Worlds that Resonate.</p>
                 </div>
                 
                 <div className="footer-links">
@@ -25,9 +25,9 @@ const Footer = () => {
 
                     <div className="footer-column">
                         <h4>Connect</h4>
-                        <a href="mailto:hej@sonicassembly.com">hej@sonicassembly.com</a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="mailto:hej@sonicassembly.se">hej@sonicassembly.se</a>
+                        <a href="https://se.linkedin.com/company/sonic-assembly" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://www.instagram.com/sonicassembly/" target="_blank" rel="noopener noreferrer">Instagram</a>
                     </div>
                 </div>
             </div>

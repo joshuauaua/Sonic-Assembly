@@ -29,9 +29,7 @@ export default function Hero() {
                 A CREATIVE SOUND STUDIO
             </h1>
             
-            <p className="hero-subtext">
-                Tailored sounds and custom tech for brands, films, and experiences
-            </p>
+         
 
             <Link to="/about" className="hero-cta">
                 Learn More
