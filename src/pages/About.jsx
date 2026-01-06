@@ -7,7 +7,7 @@ const About = () => {
         
         <div style={{ 
             minHeight: '100vh', 
-            padding: '8rem 2rem 4rem',
+            padding: '12rem 2rem 4rem',
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center',

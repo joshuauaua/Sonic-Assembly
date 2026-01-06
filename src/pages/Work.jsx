@@ -3,7 +3,7 @@ import projectDetails from '../data/project-details';
 
 const Work = () => {
     return (
-        <div style={{ paddingTop: '80px', paddingLeft: '3rem', paddingRight: '3rem', paddingBottom: '3rem' }}>
+        <div style={{ paddingTop: '12rem', paddingLeft: '3rem', paddingRight: '3rem', paddingBottom: '3rem' }}>
             <div style={{ 
                 display: 'grid', 
                 gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', 

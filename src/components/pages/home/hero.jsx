@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './hero.css';
+import heroVideo from '../../../assets/sonicassemblyheroreduced.mp4';
 
 export default function Hero() {
   return (
@@ -14,8 +15,7 @@ export default function Hero() {
             playsInline
             poster="https://images.unsplash.com/photo-1478737270239-2f02b77ac6d5?q=80&w=3456&auto=format&fit=crop"
         >
-            {/* Using a placeholder abstract video - Replace 'src' with your actual video file */}
-            <source src="https://www.vecteezy.com/video/1940557-white-smoke-in-a-slow-motion-loop-in-black-background" type="video/mp4" />
+            <source src={heroVideo} type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 

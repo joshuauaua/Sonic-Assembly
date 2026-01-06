@@ -9,28 +9,28 @@
   {
     "id": 2,
     "title": "Click: Click",
-    "description": "Connect with friends and share moments in this responsive mobile-first web application.",
+    "description": "Original Soundtrack for feature documentary by director Phil Evans for Fujifilm Nordic and Polar Skate Co.",
     "imageId": "clickselect",
     "slug": "click-click"
   },
   {
     "id": 3,
     "title": "Tantparkour",
-    "description": "Boost productivity with this drag-and-drop task organizer featuring team collaboration tools.",
+    "description": "Original Soundtrack for short film 'Tantparkour' for Mittuniversitet, directed by Vera Bergren Wiklund.",
     "imageId": "tantparkourselect",
     "slug": "tantparkour"
   },
   {
     "id": 4,
     "title": "GoogleFX DJ with Jacob Collier",
-    "description": "Monitor your workouts and health metrics with beautiful visualizations and progress tracking.",
+    "description": "Original music, sound design and final mix for GoogleFX DJ video series with Jacob Collier.",
     "imageId": "collierselect",
     "slug": "google-jacob-collier"
   },
   {
     "id": 5,
     "title": "Velosonics",
-    "description": "Discover thousands of recipes based on ingredients you have in your kitchen right now.",
+    "description": "Sonic research project commissioned by Goethe Institute to pilot an audio categorizer that utilises Machine Learning",
     "imageId": "goetheselect",
     "slug": "velosonics"
   }
