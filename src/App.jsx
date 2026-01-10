@@ -8,10 +8,13 @@ import ProjectTemplate from './pages/ProjectTemplate';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import { ThemeProvider } from './context/ThemeContext';
 
+import ScrollToTop from './components/common/ScrollToTop';
+
 export default function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <SEO />
           <Routes>
