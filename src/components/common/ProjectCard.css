@@ -20,8 +20,8 @@
 
 .card-image-container {
   width: 100%;
-  aspect-ratio: 16/9;
-  /* Set aspect ratio */
+  aspect-ratio: 1/1;
+  /* Square aspect ratio */
   overflow: hidden;
   position: relative;
   background-color: var(--surface-bg);
