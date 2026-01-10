@@ -1,41 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './project-gallery.css';
 import projectsData from '../../../data/projects.json';
-import shankarselect from '../../../assets/shankarselect.png';
-import clickselect from '../../../assets/clickselect.png';
-import tantparkourselect from '../../../assets/tantparkourselect.png';
-import collierselect from '../../../assets/collierselect.png';
-import goetheselect from '../../../assets/goetheselect.png';
+import ProjectCard from '../../common/ProjectCard';
 
-// Map image IDs from JSON to actual imported assets
-const imageMap = {
-  'shankarselect': shankarselect,
-  'clickselect': clickselect,
-  'tantparkourselect': tantparkourselect,
-  'collierselect': collierselect,
-  'goetheselect': goetheselect
-};
-
-// Enhance projects with actual image assets
-const projects = projectsData.map(project => ({
-  ...project,
-  image: project.imageId ? imageMap[project.imageId] : null
-}));
+// Filter only selected projects for the gallery
+const projects = projectsData.filter(project => project.selected);
 
 export default function ProjectGallery() {
   const [startIndex, setStartIndex] = useState(0);
   
-  // Calculate max index - with 3 cards visible, we want to stop slinding when the last 3 are shown.
-  // Actually, typically in simple sliders without infinite loop, you slide one by one or page by page.
-  // Let's slide one by one.
   const cardsToShow = 3; 
 
   const nextSlide = () => {
     if (startIndex < projects.length - cardsToShow) {
       setStartIndex(prev => prev + 1);
     } else {
-        // Optional: loop back to start
         setStartIndex(0);
     }
   };
@@ -44,29 +23,10 @@ export default function ProjectGallery() {
     if (startIndex > 0) {
       setStartIndex(prev => prev - 1);
     } else {
-        // Optional: loop to end
         setStartIndex(projects.length - cardsToShow);
     }
   };
 
-  // We need to calculate the transform percentage based on how many cards we've shifted.
-  // Each card + gap takes up a certain standard width percentage.
-  // However, simpler is to just limit the window.
-  // A robust pure CSS transform way:
-  // translateX = - (startIndex * (100 / discrete_visible_items + gap_adjustment)) -- complicates with gap.
-  // Easier: 
-  // Let's use the calc logic from CSS.
-  // flex: 0 0 calc((100% - 40px) / 3); -> 33.33% roughly minus gap.
-  // If we shift by percentage:
-  // If we move index 1, we basically want the 2nd item to be at the left edge.
-  // With flex gap, it's easier to just translate by (100% / visible_count + gap corrections) but percentage is tricky with pixels.
-  
-  // Let's try a simpler approach for the transform:
-  // Move by (100% + gap) / 3 * startIndex.
-  // The gap is 20px. 
-  // The width of one item is (100% - 2 * 20px)/3.
-  // The move distance is ItemWidth + Gap.
-  
   return (
     <div className="project-gallery-container">
       <div className="gallery-content-wrapper">
@@ -76,20 +36,13 @@ export default function ProjectGallery() {
             <div 
               className="slider-track"
               style={{
-                transform: `translateX(calc(-${startIndex} * ((100% + 20px) / ${cardsToShow})))`
+                transform: `translateX(calc(-${startIndex} * ((100% + 40px) / ${cardsToShow})))`
               }}
             >
               {projects.map((project) => (
-                <div key={project.id} className="project-card">
-                  <Link to={`/work/${project.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                    <div className="card-image" style={{backgroundColor: project.color}}>
-                      {project.image && <img src={project.image} alt={project.title} />}
-                    </div>
-                    <div className="card-content">
-                      <h3>{project.title}</h3>
-                      <p>{project.description}</p>
-                    </div>
-                  </Link>
+                <div key={project.id} style={{ flex: `0 0 calc((100% - 80px) / ${cardsToShow})` }}> 
+                   {/* Note: Inlined flex style here to match calculator logic slightly adjusted for gap 40px */}
+                  <ProjectCard project={project} />
                 </div>
               ))}
             </div>

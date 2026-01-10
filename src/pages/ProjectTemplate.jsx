@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import projectData from '../data/project-details.js';
-import projectsList from '../data/projects.json';
+import projectData from '../data/projects.json';
+import { getImage } from '../utils/imageMap';
 import './ProjectTemplate.css';
 
 const ProjectTemplate = () => {
@@ -10,29 +10,21 @@ const ProjectTemplate = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // In a real app, this might be an API call. 
-        // Here we just find the project in our JSON.
         const foundProject = projectData.find(p => p.slug === slug);
-        const projectInfo = projectsList.find(p => p.slug === slug);
-
-        if (foundProject) {
-            if (projectInfo && projectInfo.headerGradient) {
-                foundProject.headerGradient = projectInfo.headerGradient;
-            }
-            setProject(foundProject);
-        }
+        setProject(foundProject);
         setLoading(false);
         
-        // Scroll to top on mount
         window.scrollTo(0, 0);
     }, [slug]);
 
     if (loading) return <div className="project-loading">Loading...</div>;
     if (!project) return <Navigate to="/work" replace />;
 
+    const bannerImage = getImage(project.imageId);
+    const galleryImages = (project.galleryImageIds || []).map(id => getImage(id)).filter(Boolean);
+
     return (
         <div className="project-template">
-            {/* Banner Image */}
             {/* Banner Image */}
             <div className="project-banner">
                 {project.headerGradient ? (
@@ -41,7 +33,7 @@ const ProjectTemplate = () => {
                         style={{ background: project.headerGradient }}
                     />
                 ) : (
-                    <img src={project.bannerImage} alt={project.title} />
+                    bannerImage && <img src={bannerImage} alt={project.title} />
                 )}
                 <div className="banner-overlay"></div>
                 <div className="banner-title-container">
@@ -51,34 +43,36 @@ const ProjectTemplate = () => {
 
             <div className="project-content">
                 {/* Metadata Section */}
-                <section className="project-metadata">
-                    <div className="metadata-grid">
-                        <div className="metadata-item">
-                            <h3>Client</h3>
-                            <p>{project.metadata.client}</p>
-                        </div>
-                        <div className="metadata-item">
-                            <h3>Year</h3>
-                            <p>{project.metadata.year}</p>
-                        </div>
-                        <div className="metadata-item">
-                            <h3>Director/Collaborator</h3>
-                            <p>{project.metadata.director}</p>
-                        </div>
-                        <div className="metadata-item">
-                            <h3>Medium</h3>
-                            <p>{project.metadata.medium}</p>
-                        </div>
-                        <div className="metadata-item full-width">
+                {project.metadata && (
+                    <section className="project-metadata">
+                        <div className="metadata-grid">
+                            <div className="metadata-item">
+                                <h3>Client</h3>
+                                <p>{project.metadata.client}</p>
+                            </div>
+                            <div className="metadata-item">
+                                <h3>Year</h3>
+                                <p>{project.metadata.year}</p>
+                            </div>
+                            <div className="metadata-item">
+                                <h3>Director/Collaborator</h3>
+                                <p>{project.metadata.director}</p>
+                            </div>
+                            <div className="metadata-item">
+                                <h3>Medium</h3>
+                                <p>{project.metadata.medium}</p>
+                            </div>
+                            <div className="metadata-item full-width">
                             <h3>Tags</h3>
-                            <div className="tags-list">
-                                {project.metadata.tags.map(tag => (
-                                    <span key={tag} className="tag">{tag}</span>
-                                ))}
+                                <div className="tags-list">
+                                    {project.metadata.tags.map(tag => (
+                                        <span key={tag} className="tag">{tag}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                )}
 
                 {/* Video Section */}
                 {project.videoUrl && (
@@ -96,37 +90,41 @@ const ProjectTemplate = () => {
                 )}
 
                 {/* STAR Description */}
-                <section className="project-description">
-                    <div className="star-grid">
-                        <div className="star-item">
-                            <h2>Situation</h2>
-                            <p>{project.starDescription.situation}</p>
-                        </div>
-                        <div className="star-item">
-                            <h2>Task</h2>
-                            <p>{project.starDescription.task}</p>
-                        </div>
-                        <div className="star-item">
-                            <h2>Action</h2>
-                            <p>{project.starDescription.action}</p>
-                        </div>
-                        <div className="star-item">
-                            <h2>Result</h2>
-                            <p>{project.starDescription.result}</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Image Grid - 2x2 Landscape */}
-                <section className="project-gallery">
-                    <div className="gallery-grid">
-                        {project.galleryImages.slice(0, 4).map((img, index) => (
-                            <div key={index} className="gallery-item">
-                                <img src={img} alt={`${project.title} gallery ${index + 1}`} loading="lazy" />
+                {project.starDescription && (
+                    <section className="project-description">
+                        <div className="star-grid">
+                            <div className="star-item">
+                                <h2>Situation</h2>
+                                <p>{project.starDescription.situation}</p>
                             </div>
-                        ))}
-                    </div>
-                </section>
+                            <div className="star-item">
+                                <h2>Task</h2>
+                                <p>{project.starDescription.task}</p>
+                            </div>
+                            <div className="star-item">
+                                <h2>Action</h2>
+                                <p>{project.starDescription.action}</p>
+                            </div>
+                            <div className="star-item">
+                                <h2>Result</h2>
+                                <p>{project.starDescription.result}</p>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* Image Grid */}
+                {galleryImages.length > 0 && (
+                    <section className="project-gallery">
+                        <div className="gallery-grid">
+                            {galleryImages.slice(0, 4).map((img, index) => (
+                                <div key={index} className="gallery-item">
+                                    <img src={img} alt={`${project.title} gallery ${index + 1}`} loading="lazy" />
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
             </div>
         </div>
     );

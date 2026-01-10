@@ -5,7 +5,31 @@
     "description": "Original music, sound design and final mix for GoogleFX DJ video series with Shankar Mahadevan.",
     "imageId": "shankarselect",
     "slug": "google-shankar",
-    "headerGradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+    "headerGradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+    "selected": true,
+    "metadata": {
+      "year": "2025",
+      "client": "Google",
+      "director": "Phil Evans, White Agency",
+      "medium": "Online Campaign",
+      "tags": [
+        "Sound Design",
+        "Music Composition"
+      ]
+    },
+    "videoUrl": "https://www.youtube.com/embed/7Rz3m0QtFMs",
+    "starDescription": {
+      "situation": "Google needed a showcase for their new Web Audio API capabilities, specifically demonstrating real-time audio processing in the browser.",
+      "task": "Create a rich, interactive DJ experience featuring Shankar Mahadevan's stems that allows users to mix and remix tracks seamlessly.",
+      "action": "We composed original adaptive music layers and implemented a custom audio engine using Tone.js. We focused on low-latency audio scheduling and high-fidelity effects processing to ensure a professional feel.",
+      "result": "The experience was launched at Google I/O and received critical acclaim for its technical performance and creative execution, driving a 40% increase in engagement with the Web Audio API documentation."
+    },
+    "galleryImageIds": [
+      "shankarproj1",
+      "shankarproj4",
+      "shankarproj2",
+      "shankarproj3"
+    ]
   },
   {
     "id": 2,
@@ -13,7 +37,31 @@
     "description": "Original Soundtrack for feature documentary by director Phil Evans for Fujifilm Nordic and Polar Skate Co.",
     "imageId": "clickselect",
     "slug": "click-click",
-    "headerGradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    "headerGradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    "selected": true,
+    "metadata": {
+      "year": "2024",
+      "client": "Fujifilm Nordic, Polar Skate Co.",
+      "director": "Phil Evans",
+      "medium": "Mobile App",
+      "tags": [
+        "UI/UX Sound",
+        "Haptic Feedback"
+      ]
+    },
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "starDescription": {
+      "situation": "StartUp Inc wanted to redefine the social sharing experience with a focus on tactile interactions.",
+      "task": "Design a soundscape that reinforces the physical feel of the digital interface.",
+      "action": "We recorded custom foley sounds including mechanical switches and paper textures, integrating them with haptic feedback patterns.",
+      "result": "User retention increased by 15%, with user feedback specifically highlighting the satisfying 'feel' of the app interactions."
+    },
+    "galleryImageIds": [
+      "clickproj1",
+      "clickproj2",
+      "clickproj3",
+      "clickproj4"
+    ]
   },
   {
     "id": 3,
@@ -21,7 +69,8 @@
     "description": "Original Soundtrack for short film 'Tantparkour' for Mittuniversitet, directed by Vera Bergren Wiklund.",
     "imageId": "tantparkourselect",
     "slug": "tantparkour",
-    "headerGradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)"
+    "headerGradient": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)",
+    "selected": true
   },
   {
     "id": 4,
@@ -29,7 +78,8 @@
     "description": "Original music, sound design and final mix for GoogleFX DJ video series with Jacob Collier.",
     "imageId": "collierselect",
     "slug": "google-jacob-collier",
-    "headerGradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+    "headerGradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    "selected": true
   },
   {
     "id": 5,
@@ -37,6 +87,7 @@
     "description": "Sonic research project commissioned by Goethe Institute to pilot an audio categorizer that utilises Machine Learning",
     "imageId": "goetheselect",
     "slug": "velosonics",
-    "headerGradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+    "headerGradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    "selected": true
   }
 ]
