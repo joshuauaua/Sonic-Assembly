@@ -23,9 +23,25 @@ const ProjectTemplate = () => {
     const bannerImage = getImage(project.imageId);
     const galleryImages = (project.galleryImageIds || []).map(id => getImage(id)).filter(Boolean);
 
+    const getEmbedUrl = (url) => {
+        if (!url) return '';
+        // Handle youtu.be short links
+        if (url.includes('youtu.be')) {
+            const id = url.split('youtu.be/')[1].split('?')[0];
+            return `https://www.youtube.com/embed/${id}`;
+        }
+        // Handle standard youtube.com watch links
+        if (url.includes('youtube.com/watch')) {
+            const urlParams = new URLSearchParams(new URL(url).search);
+            return `https://www.youtube.com/embed/${urlParams.get('v')}`;
+        }
+        // Handle URLs that are already embed links or other formats
+        return url;
+    };
+
     return (
         <div className="project-template">
-            {/* Banner Image */}
+            {/* ... (Banner Image section remains unchanged) */}
             <div className="project-banner">
                 {project.headerGradient ? (
                     <div 
@@ -42,7 +58,7 @@ const ProjectTemplate = () => {
             </div>
 
             <div className="project-content">
-                {/* Metadata Section */}
+                {/* ... (Metadata section remains unchanged) */}
                 {project.metadata && (
                     <section className="project-metadata">
                         <div className="metadata-grid">
@@ -75,11 +91,11 @@ const ProjectTemplate = () => {
                 )}
 
                 {/* Video Section */}
-                {project.videoUrl && (
+                {project.videoUrl && project.videoUrl !== 'placeholder' && (
                     <section className="project-video">
                         <div className="video-container">
                             <iframe 
-                                src={project.videoUrl} 
+                                src={getEmbedUrl(project.videoUrl)} 
                                 title={project.title} 
                                 frameBorder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

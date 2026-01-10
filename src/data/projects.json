@@ -3,9 +3,12 @@
     "id": 1,
     "title": "Google Lab Sessions: Shankar Mahadevan x Music AI",
     "description": "Sound design and final mix for a video series documenting a creative encounter between Bollywood icon Shankar Mahadevan and Google's AI Music Sandbox.",
-    "imageId": "shankar_cover",
+    "imageId": "google_shankar_cover",
     "slug": "google-shankar-mahadevan",
-    "category": "Sound Design",
+    "categories": [
+      "Sound Design",
+      "Final Mix"
+    ],
     "headerGradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
     "selected": true,
     "showInWork": true,
@@ -34,13 +37,49 @@
   },
   {
     "id": 2,
+    "title": "Tantparkour",
+    "description": "Original soundtrack for a research film about senior parkour.",
+    "imageId": "tantparkour_cover",
+    "slug": "tantparkour",
+    "categories": [
+      "Original Music"
+    ],
+    "headerGradient": "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    "selected": true,
+    "showInWork": true,
+    "metadata": {
+      "year": "2025",
+      "client": "Mittuniversitet",
+      "director": "Vera Bergren Wiklund",
+      "medium": "Short Film / Online",
+      "tags": [
+        "Original Music"
+      ]
+    },
+    "videoUrl": "https://youtu.be/6h6K3ja2Q6U?si=787BoUpu52qyWpTL",
+    "starDescription": {
+      "situation": "Mittuniversitetet commissioned a research film exploring \"Tantparkour\" (Senior Parkour) to challenge ageism and stereotypes about older women in public spaces.",
+      "task": "Compose an original score for a short film that reflected the vitality of the subjects without relying on sentimental tropes.",
+      "action": "We created a kinetic soundscape emphasizing strength and playfulness, avoiding \"sedate\" clichés to support the film's norm-critical perspective on aging bodies.",
+      "result": "The score successfully framed the subjects as powerful participants, helping the university visualize their research and broaden the image of active aging."
+    },
+    "galleryImageIds": [
+      "tantparkour_1",
+      "tantparkour_2"
+    ]
+  },
+  {
+    "id": 4,
     "title": "Google Lab Sessions: Jacob Collier x Music AI",
     "description": "Background music and final mix for multiple cutdowns featuring Jacob Collier test-driving Google's MusicFX DJ.",
-    "imageId": "jacob_collier_cover",
+    "imageId": "google_collier_cover",
     "slug": "google-jacob-collier",
-    "category": "Sound Design",
+    "categories": [
+      "Sound Design",
+      "Final Mix"
+    ],
     "headerGradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    "selected": false,
+    "selected": true,
     "showInWork": true,
     "metadata": {
       "year": "2024",
@@ -66,13 +105,15 @@
   },
   {
     "id": 3,
-    "title": "Click Click",
+    "title": "Click: Click",
     "description": "Original soundtrack for a full-length documentary tracing the thirty-year journey of Malmö skate photographer Nils Svensson.",
-    "imageId": "click_click_cover",
+    "imageId": "click_cover",
     "slug": "click-click-documentary",
-    "category": "Original Soundtrack",
+    "categories": [
+      "Original Soundtrack"
+    ],
     "headerGradient": "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
-    "selected": false,
+    "selected": true,
     "showInWork": true,
     "metadata": {
       "year": "2024",
@@ -97,14 +138,17 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Velosonics",
     "description": "A sonic research pilot project developing an acoustic monitoring system for delivery bikes using Machine Learning.",
     "imageId": "velosonics_cover",
     "slug": "velosonics-research",
-    "category": "Sonic Research",
+    "categories": [
+      "Sonic Research",
+      "Machine Learning"
+    ],
     "headerGradient": "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)",
-    "selected": false,
+    "selected": true,
     "showInWork": true,
     "metadata": {
       "year": "2025",
@@ -130,12 +174,15 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "ÆTHER",
     "description": "A real-time responsive sound installation featuring handmade copper-pipe chimes and granular synthesis.",
     "imageId": "aether_cover",
     "slug": "aether-installation",
-    "category": "Sound Installation",
+    "categories": [
+      "Sound Installation",
+      "Granular Synthesis"
+    ],
     "headerGradient": "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
     "selected": false,
     "showInWork": true,
@@ -146,11 +193,10 @@
       "medium": "Sound Installation",
       "tags": [
         "Sound Installation",
-        "Granular Synthesis",
-        "Physical Computing"
+        "Event"
       ]
     },
-    "videoUrl": "placeholder",
+    "videoUrl": "https://youtube.com/shorts/qRaTpbFlU-4?si=zYxqnvHKGZo1Q3UF",
     "starDescription": {
       "situation": "We were invited to the Linje 13 Festival at Värmeverket to create an installation for a corridor leading to a main room.",
       "task": "Build a real-time responsive installation that could run continuously, providing an airy, light, and brief immersive experience for passersby.",
@@ -163,12 +209,14 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "MICROFRAMES",
     "description": "An experimental music production project exploring audio/visual fragmentations within the span of a single second.",
     "imageId": "microframes_cover",
     "slug": "microframes-experimental",
-    "category": "Experimental A/V",
+    "categories": [
+      "Experimental A/V"
+    ],
     "headerGradient": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     "selected": false,
     "showInWork": true,
@@ -196,12 +244,14 @@
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "The Internet Will Save Us All",
     "description": "Original cyberpunk-inspired music for a concept brand exploring society’s optimism regarding technology.",
     "imageId": "internet_save_cover",
     "slug": "internet-will-save-us-all",
-    "category": "Original Music",
+    "categories": [
+      "Original Music"
+    ],
     "headerGradient": "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
     "selected": false,
     "showInWork": true,

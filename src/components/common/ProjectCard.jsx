@@ -18,7 +18,11 @@ const ProjectCard = ({ project }) => {
                 </div>
                 <div className="card-content">
                     <h3>{project.title}</h3>
-                    <p>{project.category}</p>
+                    <div className="card-tags">
+                        {project.categories && project.categories.map((cat, index) => (
+                            <span key={index} className="card-tag">{cat}</span>
+                        ))}
+                    </div>
                 </div>
             </Link>
         </div>

@@ -1,26 +1,26 @@
-import shankarSelect from '../assets/shankarselect.png';
+import google_shankar_cover from '../assets/google_shankar_cover.png';
 import shankarProj1 from '../assets/shankarproj1.png';
 import shankarProj2 from '../assets/shankarproj2.png';
 import shankarProj3 from '../assets/shankarproj3.png';
 import shankarProj4 from '../assets/shankarproj4.png';
 
-import clickSelect from '../assets/clickselect.png';
+import click_cover from '../assets/click_cover.png';
 import clickProj1 from '../assets/clickproj1.jpg';
 import clickProj2 from '../assets/clickproj2.jpg';
 import clickProj3 from '../assets/clickproj3.jpg';
 import clickProj4 from '../assets/clickproj4.jpg';
 
-import tantparkourSelect from '../assets/tantparkourselect.png';
-import collierSelect from '../assets/collierselect.png';
-import goetheSelect from '../assets/goetheselect.png';
+import tantparkour_cover from '../assets/tantparkour_cover.png';
+import google_collier_cover from '../assets/google_collier_cover.png';
+import velosonics_cover from '../assets/velosonics_cover.png';
 
 export const imageMap = {
   // Project Selection / Banners
-  'shankarselect': shankarSelect,
-  'clickselect': clickSelect,
-  'tantparkourselect': tantparkourSelect,
-  'collierselect': collierSelect,
-  'goetheselect': goetheSelect,
+  'google_shankar_cover': google_shankar_cover,
+  'click_cover': click_cover,
+  'tantparkour_cover': tantparkour_cover,
+  'google_collier_cover': google_collier_cover,
+  'velosonics_cover': velosonics_cover,
 
   // Gallery Images - Shankar
   'shankarproj1': shankarProj1,
