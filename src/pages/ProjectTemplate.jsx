@@ -89,14 +89,37 @@ const ProjectTemplate = () => {
                     </section>
                 )}
 
-                {/* STAR Description */}
+                {/* STAR Description - Part 1: Situation */}
                 {project.starDescription && (
-                    <section className="project-description">
+                    <section className="project-description situation-section">
                         <div className="star-grid">
                             <div className="star-item">
                                 <h2>Situation</h2>
                                 <p>{project.starDescription.situation}</p>
                             </div>
+                        </div>
+                    </section>
+                )}
+            </div>
+
+            {/* Image Grid - Full Width */}
+            {galleryImages.length > 0 && (
+                <section className="project-gallery full-width-gallery">
+                    <div className="gallery-grid">
+                        {galleryImages.slice(0, 4).map((img, index) => (
+                            <div key={index} className="gallery-item">
+                                <img src={img} alt={`${project.title} gallery ${index + 1}`} loading="lazy" />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            <div className="project-content">
+                {/* STAR Description - Part 2: Task, Action, Result */}
+                {project.starDescription && (
+                    <section className="project-description remaining-star-section">
+                        <div className="star-grid">
                             <div className="star-item">
                                 <h2>Task</h2>
                                 <p>{project.starDescription.task}</p>
@@ -109,19 +132,6 @@ const ProjectTemplate = () => {
                                 <h2>Result</h2>
                                 <p>{project.starDescription.result}</p>
                             </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* Image Grid */}
-                {galleryImages.length > 0 && (
-                    <section className="project-gallery">
-                        <div className="gallery-grid">
-                            {galleryImages.slice(0, 4).map((img, index) => (
-                                <div key={index} className="gallery-item">
-                                    <img src={img} alt={`${project.title} gallery ${index + 1}`} loading="lazy" />
-                                </div>
-                            ))}
                         </div>
                     </section>
                 )}
